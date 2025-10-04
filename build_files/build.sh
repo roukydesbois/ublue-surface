@@ -13,8 +13,8 @@ set -ouex pipefail
 dnf5 install -y tmux
 sudo dnf config-manager \
     addrepo --from-repofile=https://pkg.surfacelinux.com/fedora/linux-surface.repo
-sudo dnf replace -y kernel kernel-surface
-sudo dnf install -y --allowerasing iptsd libwacom-surface
+sudo dnf remove -y kernel
+sudo dnf install -y --allowerasing kernel-surface iptsd libwacom-surface
 sudo dnf install -y surface-secureboot
 
 # Use a COPR Example:
