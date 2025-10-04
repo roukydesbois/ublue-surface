@@ -14,6 +14,8 @@ dnf5 install -y tmux
 sudo dnf config-manager \
     addrepo --from-repofile=https://pkg.surfacelinux.com/fedora/linux-surface.repo
 sudo dnf remove -y kernel kernel-modules
+# Clean up any remaining kernel module directories to avoid conflicts
+sudo rm -rf /usr/lib/modules/*
 sudo dnf install -y --allowerasing kernel-surface iptsd libwacom-surface
 sudo dnf install -y surface-secureboot
 
