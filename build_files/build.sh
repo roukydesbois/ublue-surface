@@ -10,7 +10,11 @@ set -ouex pipefail
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/39/x86_64/repoview/index.html&protocol=https&redirect=1
 
 # this installs a package from fedora repos
-dnf5 install -y tmux 
+dnf5 install -y tmux
+sudo dnf config-manager \
+    addrepo --from-repofile=https://pkg.surfacelinux.com/fedora/linux-surface.repo
+sudo dnf install -y --allowerasing kernel-surface iptsd libwacom-surface
+sudo dnf install -y surface-secureboot
 
 # Use a COPR Example:
 #
